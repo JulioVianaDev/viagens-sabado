@@ -4,7 +4,6 @@ import Botao from "./layout/Botao";
 import {useState,useEffect} from 'react';
 function Geral(){
   const [variavel,FunctionMudarVariavel]= useState(false)
-  
   const Logar = ()=>{
     FunctionMudarVariavel(true)
   } 
@@ -15,6 +14,9 @@ function Geral(){
   useEffect(()=>{
     console.log("renderizei a primeira vez")
   },[variavel])
+  function Ola(){
+    console.log("ola")
+  }
   return(
     <>
       <FunctionSimples/>
@@ -24,6 +26,7 @@ function Geral(){
       }
       <Botao tarefa={Logar} classe="botao purple"> Entrar </Botao>
       <Botao tarefa={Deslogar} classe="botao blue"> Sair </Botao>
+      <Botao tarefa={Ola} classe="botao red"> Começou </Botao>
     </>
   )
 }
