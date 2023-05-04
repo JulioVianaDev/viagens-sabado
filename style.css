@@ -4,7 +4,9 @@
 }
 .body-dark{
   background-color: var(--background-dark);
+  color: white;
 }
 .body-light{
   background-color: var(--background-light);
+  color: black
 }
