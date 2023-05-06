@@ -10,3 +10,14 @@
   background-color: var(--background-light);
   color: black
 }
+#moon{
+
+}
+#sun{
+  color: white;
+}
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -10,18 +10,29 @@
 </head>
 <body id="body" class="anima body-dark">
   <nav>
-    <button onclick="darkTheme()">Tema Dark</button>
-    <button onclick="lightTheme()">Tema Light</button>
+    <div>
+
+    </div>
+    <div id="temasOptions">
+      <div onclick="toggleTheme()"><img id="moon" src="./images/sun.png"/></div>
+    </div>
+    
   </nav>
-  <h1>Enviando um post</h1>
-  <form id="my-form">
-    <label for="title">Titulo</label><br>
-    <input type="text" name="title" id="title"/> <br>
-    <label for="image">Imagem: </label>
-    <input type="file" name="image" id="image"/>
-    <button type="submit"> Enviar</button>
-  </form>
-  <div id="latest-post"></div>
+  <div id="conteudo">
+    <div id="formDiv">
+      <h1>Enviando um post</h1>
+      <form id="my-form">
+        <label for="title">Titulo</label><br>
+        <input type="text" name="title" id="title"/> <br>
+        <label for="image">Imagem: </label>
+        <input type="file" name="image" id="image"/>
+        <button type="submit"> Enviar</button>
+      </form>
+    </div>
+    <div id="imagem">
+      <div id="latest-post"></div>
+    </div>
+  </div>
   <script src="./post.js"></script>
   <script src="./styles.js"></script>
 </body>
