@@ -52,6 +52,7 @@ function App() {
         {
           travels.map(viagem=>
             <Card
+              deleteTravel={deleteTravel}
               key={viagem.id}
               id={viagem.id}
               nome={viagem.nome}

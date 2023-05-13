@@ -1,5 +1,5 @@
 import './Card.css';
-
+import {BsTrash2Fill} from 'react-icons/bs'
 function Card(props) {
   const {id,data,desc,price} = props
   return (
@@ -13,8 +13,8 @@ function Card(props) {
         </div>
         <div className="bottom">
           <div className="botoes">
-            <div>
-              deletar
+            <div onClick={()=>props.deleteTravel(id)}>
+              <BsTrash2Fill size={32}/>
             </div>
             <div className="icons">
 
