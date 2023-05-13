@@ -8,7 +8,7 @@ function App() {
   const [travel,setTravel] = useState({
                                       nome: '',
                                       data: '',
-                                      price: 0,
+                                      price: '',
                                       desc: ''
                                     })
   useEffect(()=>{
@@ -16,6 +16,16 @@ function App() {
       .then(resposta=> setTravels(resposta.data))
       .catch(erro=>console.error(erro))
   },[])
+
+  const deleteTravel = (id)=>{
+    axios.delete(`http://localhost:3001/api/v1/travels/${id}`)
+      .then(res=>{
+        console.log(res.data)
+        setTravels(travels.filter(t=>t.id !== id))
+      })
+      .catch(erro=>console.log("Erro ao deletar"))
+  }
+
   function EnvioFormulario(event){
     event.preventDefault();
     axios.post('http://localhost:3001/api/v1/travels',{travel})
