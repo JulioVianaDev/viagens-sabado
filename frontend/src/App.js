@@ -42,12 +42,12 @@ function App() {
         {
           travels.map(viagem=>
             <Card
-            key={viagem.id}
-            id={viagem.id}
-            nome={viagem.nome}
-            data={viagem.data}
-            desc={viagem.desc}
-            price={viagem.price}
+              key={viagem.id}
+              id={viagem.id}
+              nome={viagem.nome}
+              data={viagem.data}
+              desc={viagem.desc}
+              price={viagem.price}
             />  
           )
         }
