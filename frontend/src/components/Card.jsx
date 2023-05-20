@@ -19,11 +19,15 @@ function Card(props) {
         <div className="conteudoCard">
           <p>{desc}</p>
           <p>{FormatarData(data)}</p>
-          <p>{price}</p>
+          <p className='price'>{price}</p>
         </div>
         <div className="bottom">
-          <div className="botoes">
-            <div onClick={()=>deleteMode()}>
+          <div className="btns">
+            <div 
+              onClick={()=>deleteMode()}
+              id="trashDelete"
+              className='icons'
+            >
               <BsTrash2Fill size={32}/>
             </div>
             <div className="icons">
