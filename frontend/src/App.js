@@ -50,7 +50,7 @@ function App() {
       setTravel({
         nome: '',
         data: '',
-        price: 0,
+        price: '',
         desc: ''
       })
     })
@@ -58,6 +58,17 @@ function App() {
   }
   function EnvioFormulario(event){
     event.preventDefault();
+    if (editId !== -1){
+      editTravel(editId,travel)
+      setEditID(-1)
+      setTravel({
+        nome: '',
+        data: '',
+        price: '',
+        desc: ''
+      })
+      return
+    }
     cadastrarViagen(travel);
   }
   return (
