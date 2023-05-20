@@ -42,20 +42,23 @@ function App() {
         console.log(erro)
       })
   }
+  function cadastrarViagen(travel){
+    axios.post('http://localhost:3001/api/v1/travels',{travel})
+    .then(res=>{
+      console.log(res.data)
+      setTravels([...travels,res.data])
+      setTravel({
+        nome: '',
+        data: '',
+        price: 0,
+        desc: ''
+      })
+    })
+    .catch(error=>console.log(error))
+  }
   function EnvioFormulario(event){
     event.preventDefault();
-    axios.post('http://localhost:3001/api/v1/travels',{travel})
-      .then(res=>{
-        console.log(res.data)
-        setTravels([...travels,res.data])
-        setTravel({
-          nome: '',
-          data: '',
-          price: 0,
-          desc: ''
-        })
-      })
-      .catch(error=>console.log(error))
+    cadastrarViagen(travel);
   }
   return (
     <div className="App">
