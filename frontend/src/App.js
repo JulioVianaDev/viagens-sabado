@@ -11,6 +11,8 @@ function App() {
                                       price: '',
                                       desc: ''
                                     })
+  const [editId,setEditID] =useState(-1);
+
   useEffect(()=>{
     axios.get('http://localhost:3001/api/v1/travels')
       .then(resposta=> setTravels(resposta.data))
@@ -61,6 +63,7 @@ function App() {
         travel={travel}
         setTravel={setTravel}
         EnvioFormulario={EnvioFormulario}
+        id={editId}
       />
       <div className='cards'>
         {
@@ -73,6 +76,8 @@ function App() {
               data={viagem.data}
               desc={viagem.desc}
               price={viagem.price}
+              setEditID={setEditID}
+              setTravel={setTravel}
             />  
           )
         }
