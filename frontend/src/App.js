@@ -13,7 +13,10 @@ function App() {
                                       desc: ''
                                     })
   const [editId,setEditID] =useState(-1);
-
+  const [showPopup,setShowPopup] = useState(false);
+  const [popupContent,setPopupContent] = useState({message: '',color: ''});
+  
+  
   useEffect(()=>{
     axios.get('http://localhost:3001/api/v1/travels')
       .then(resposta=> setTravels(resposta.data))
