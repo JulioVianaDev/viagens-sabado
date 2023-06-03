@@ -43,7 +43,10 @@ function Form({EnvioFormulario,travel,setTravel,id}){
             placeholder='Preço'
             type='number'
             onChange={(e)=>setTravel({...travel,price: e.target.value})}
-            />
+          />
+          <label htmlFor="image" id="imageLabel" className="imageLabel">Envie sua imagem</label>
+
+          
           <button>{id ===-1? "Cadastrar": "Editar"}</button>
         </form>
       </div>
